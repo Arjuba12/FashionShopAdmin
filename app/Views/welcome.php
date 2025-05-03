@@ -188,7 +188,7 @@
               </li>
               <li>
                 <a
-                  href="login.php"
+                  href="<?= base_url('auth/login'); ?>"
                   style="
                     color: #000;
                     font-weight: 500;
