@@ -1,16 +1,19 @@
-<div class="col-sm-12">
-    <h3><?= $title; ?></h3>
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center"><?= $title; ?></h3>
+    <br>
 
-    <?php if (!empty(session()->getFlashData('error'))) { ?>
+    <?php if (!empty(session()->getFlashData('error'))) : ?>
         <div class="alert alert-danger">
             <?= session()->getFlashData('error'); ?>
         </div>
-    <?php } ?>
+    <?php endif; ?>
 
     <form action="<?= base_url('penjualan/save'); ?>" method="post">
+        <?= csrf_field(); ?>
+
         <div class="form-group">
-            <label for="nama_product">Nama Product</label>
-            <input type="text" class="form-control" id="nama_product" name="nama_product" value="<?= old('nama_product'); ?>" required>
+            <label for="nama_product">Nama Produk</label>
+            <input type="text" class="form-control" id="nama_product" name="nama_product" value="<?= old('nama_product'); ?>" placeholder="Nama Produk" required>
         </div>
 
         <div class="form-group">
@@ -19,28 +22,28 @@
         </div>
 
         <div class="form-group">
-            <label for="konsumen">Konsumen</label>
-            <input type="text" class="form-control" id="konsumen" name="konsumen" value="<?= old('konsumen'); ?>" required>
+            <label for="id_konsumen">Konsumen</label>
+            <input type="text" class="form-control" id="id_konsumen" name="id_konsumen" value="<?= old('id_konsumen'); ?>" placeholder="Konsumen" required>
         </div>
 
         <div class="form-group">
             <label for="brand">Brand</label>
-            <input type="text" class="form-control" id="brand" name="brand" value="<?= old('brand'); ?>" required>
+            <input type="text" class="form-control" id="brand" name="brand" value="<?= old('brand'); ?>" placeholder="Brand Produk" required>
         </div>
 
         <div class="form-group">
             <label for="jumlah">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?= old('jumlah'); ?>" required>
+            <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?= old('jumlah'); ?>" placeholder="Contoh: 2" required>
         </div>
 
         <div class="form-group">
             <label for="discount">Discount (%)</label>
-            <input type="number" class="form-control" id="discount" name="discount" value="<?= old('discount'); ?>" required>
+            <input type="number" class="form-control" id="discount" name="discount" value="<?= old('discount'); ?>" placeholder="Contoh: 10" required>
         </div>
 
         <div class="form-group">
             <label for="total_harga">Total Harga</label>
-            <input type="number" class="form-control" id="total_harga" name="total_harga" value="<?= old('total_harga'); ?>" required>
+            <input type="number" class="form-control" id="total_harga" name="total_harga" value="<?= old('total_harga'); ?>" placeholder="Rp..." required>
         </div>
 
         <button type="submit" class="btn btn-primary">Simpan</button>

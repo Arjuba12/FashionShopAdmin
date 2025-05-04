@@ -8,40 +8,40 @@ class PenjualanModel extends Model
     public function get_penjualan()
     {
         return $this->db
-            ->table('tb_penjualan')  // Mengakses tabel penjualan
-            ->get()  // Mengambil semua data
-            ->getResultArray();  // Mengembalikan hasil dalam bentuk array
+            ->table('tb_penjualan')
+            ->get()
+            ->getResultArray();
     }
 
     public function insert_penjualan($data)
     {
         return $this->db
-            ->table('tb_penjualan')  // Mengakses tabel penjualan
-            ->insert($data);  // Menyisipkan data penjualan
+            ->table('tb_penjualan')
+            ->insert($data);
     }
 
     public function edit_penjualan($id_penjualan)
     {
         return $this->db
-            ->table('tb_penjualan')  // Mengakses tabel penjualan
-            ->where('id_penjualan', $id_penjualan)  // Kondisi untuk mencari berdasarkan id_penjualan
-            ->get()  // Mengambil data
-            ->getRowArray();  // Mengembalikan hasil dalam bentuk array tunggal
+            ->table('tb_penjualan')
+            ->where('id_penjualan', $id_penjualan)
+            ->get()
+            ->getRowArray();
     }
 
     public function update_penjualan($data, $id_penjualan)
     {
         return $this->db
-            ->table('tb_penjualan')  // Mengakses tabel penjualan
-            ->where('id_penjualan', $id_penjualan)  // Kondisi untuk mencari berdasarkan id_penjualan
-            ->update($data);  // Memperbarui data penjualan berdasarkan id_penjualan
+            ->table('tb_penjualan')
+            ->where('id_penjualan', $id_penjualan)
+            ->update($data);
     }
 
     public function delete_penjualan($id_penjualan)
     {
         return $this->db
-            ->table('tb_penjualan')  // Mengakses tabel penjualan
-            ->where('id_penjualan', $id_penjualan)  // Kondisi untuk mencari berdasarkan id_penjualan
-            ->delete();  // Menghapus data penjualan berdasarkan id_penjualan
+            ->table('tb_penjualan')
+            ->where('id_penjualan', $id_penjualan)
+            ->delete();
     }
 }

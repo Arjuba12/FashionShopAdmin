@@ -16,7 +16,7 @@ class Product extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'List Data Product',
+            'title' => 'Data Produk',
             'product' => $this->ProductModel->get_product(),
             'isi' => 'product/v_list',
         ];
@@ -26,7 +26,7 @@ class Product extends BaseController
     public function tambah()
     {
         $data = [
-            'title' => 'Tambah Data Product',
+            'title' => 'Tambah Data Produk',
             'isi' => 'product/v_tambah',
         ];
         echo view('layout/v_wrapper', $data);
@@ -60,7 +60,7 @@ class Product extends BaseController
     public function edit($id_product)
     {
         $data = [
-            'title' => 'Edit Data Product',
+            'title' => 'Edit Data Produk',
             'product'=> $this->ProductModel->edit_product($id_product),
             'isi' => 'product/v_edit',
         ];

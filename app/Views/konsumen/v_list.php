@@ -1,5 +1,6 @@
 <div class="col-sm-12">
     <a href="<?= base_url('konsumen/tambah'); ?>" class="btn btn-primary">Tambah Data</a>
+    <a href="<?= base_url('konsumen/printpdf'); ?>" class="btn btn-warning">Print PDF</a>
     <br><br>
 
     <?php if (!empty(session()->getFlashData('success'))) { ?>
@@ -24,7 +25,7 @@
             <?php $no = 1; foreach ($konsumen as $value) { ?>
                 <tr class="text-center">
                     <td class="align-middle"><?= $no++; ?></td>
-                    <td class="align-middle"><?= $value['nama_konsumen']; ?></td>
+                    <td class="text-left align-middle"><?= $value['nama_konsumen']; ?></td>
                     <td class="align-middle"><?= $value['umur']; ?></td>
                     <td class="align-middle"><?= $value['no_handphone']; ?></td>
                     <td class="align-middle"><?= $value['status']; ?></td>

@@ -1,5 +1,6 @@
 <div class="col-sm-12">
     <a href="<?= base_url('supplier/tambah'); ?>" class="btn btn-primary">Tambah Data</a>
+    <a href="<?= base_url('supplier/printpdf'); ?>" class="btn btn-warning">Print PDF</a>
     <br><br>
 
     <?php if (!empty(session()->getFlashData('success'))) { ?>

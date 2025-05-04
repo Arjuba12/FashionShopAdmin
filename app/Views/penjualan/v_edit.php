@@ -1,6 +1,6 @@
-<div class="col-sm-12">
+<div class="col-sm-6 offset-md-3">
     <h3><?= $title; ?></h3>
-
+    <br>
     <?php if (!empty(session()->getFlashData('error'))) { ?>
         <div class="alert alert-danger">
             <?= session()->getFlashData('error'); ?>
@@ -8,6 +8,8 @@
     <?php } ?>
 
     <form action="<?= base_url('penjualan/update/' . $penjualan['id_penjualan']); ?>" method="post">
+        <?= csrf_field(); ?>
+        
         <div class="form-group">
             <label for="nama_product">Nama Product</label>
             <input type="text" class="form-control" id="nama_product" name="nama_product" value="<?= old('nama_product', $penjualan['nama_product']); ?>" required>
@@ -19,8 +21,8 @@
         </div>
 
         <div class="form-group">
-            <label for="konsumen">Konsumen</label>
-            <input type="text" class="form-control" id="konsumen" name="konsumen" value="<?= old('konsumen', $penjualan['konsumen']); ?>" required>
+            <label for="id_konsumen">Konsumen</label>
+            <input type="text" class="form-control" id="id_konsumen" name="id_konsumen" value="<?= old('id_konsumen', $penjualan['id_konsumen']); ?>" required>
         </div>
 
         <div class="form-group">

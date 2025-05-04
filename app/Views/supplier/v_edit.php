@@ -1,13 +1,12 @@
-<div class="col-md-6">
-    <!-- general form elements -->
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">Edit Data Supplier</h3>
-        </div>
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edit Data Supplier</h3>
+    <br>
 
         <!-- form start -->
         <form action="<?= base_url('supplier/update/' . $supplier['id_supplier']); ?>" method="POST">
-            <div class="card-body">
+        <?= csrf_field(); ?>
+
+
                 <div class="form-group">
                     <label>Status</label>
                     <input name="status" value="<?= $supplier['status'] ?>" class="form-control" placeholder="Status" required>
@@ -24,12 +23,8 @@
                     <label>Alamat</label>
                     <textarea name="alamat" class="form-control" placeholder="Alamat" required><?= $supplier['alamat'] ?></textarea>
                 </div>
-            </div>
 
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-warning">Update</button>
                 <a href="<?= base_url('supplier'); ?>" class="btn btn-secondary">Kembali</a>
-            </div>
         </form>
-    </div>
 </div>

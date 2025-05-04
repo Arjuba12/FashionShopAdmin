@@ -2,87 +2,115 @@
 
 namespace App\Controllers;
 use App\Models\PenjualanModel;
-use App\Models\ProductModel;
+use Dompdf\Dompdf;
+
 
 class Penjualan extends BaseController
 {
-    protected $penjualanModel;
-    protected $productModel;
+    protected $PenjualanModel;
 
     public function __construct()
     {
-        $this->penjualanModel = new PenjualanModel();
-        $this->productModel = new ProductModel();
+        $this->PenjualanModel = new PenjualanModel();
     }
 
-    // Menampilkan data penjualan
     public function index()
     {
         $data = [
             'title' => 'Data Penjualan',
-            'penjualan' => $this->penjualanModel->get_penjualan(),
+            'penjualan' => $this->PenjualanModel->get_penjualan(),
             'isi' => 'penjualan/v_list',
         ];
         echo view('layout/v_wrapper', $data);
     }
 
-    // Menambahkan data penjualan
     public function tambah()
     {
-        // Ambil daftar produk untuk dropdown
-        $data['products'] = $this->productModel->findAll();
-
-        $data['title'] = 'Tambah Penjualan';
-        $data['isi'] = 'penjualan/v_tambah';
+        $data = [
+            'title' => 'Tambah Data penjualan',
+            'isi' => 'penjualan/v_tambah',
+        ];
         echo view('layout/v_wrapper', $data);
     }
 
-    // Simpan data penjualan
     public function save()
     {
-        $product = $this->request->getPost('product');
-        $jumlah = $this->request->getPost('jumlah');
-        $discount = $this->request->getPost('discount');
-        $konsumen = $this->request->getPost('konsumen');
-
-        // Validasi input
-        if (empty($product) || empty($jumlah) || empty($discount) || empty($konsumen)) {
-            session()->setFlashData('error', 'Semua kolom harus diisi!');
-            return redirect()->to(base_url('penjualan/tambah'));
-        }
-
-        // Ambil data produk berdasarkan id
-        $productData = $this->productModel->find($product);
-
-        // Pastikan produk ditemukan
-        if (!$productData) {
-            session()->setFlashData('error', 'Produk tidak ditemukan');
-            return redirect()->to(base_url('penjualan/tambah'));
-        }
-
-        $harga = $productData['harga'];
-
-        // Hitung total harga setelah diskon
-        $totalHarga = $jumlah * $harga * (1 - $discount / 100);
-
-        // Data untuk disimpan
         $data = [
-            'nama_product' => $productData['name_product'],
-            'tgl_terjual' => date('Y-m-d'),
-            'konsumen' => $konsumen,
-            'brand' => $productData['brand'],
-            'jumlah' => $jumlah,
-            'discount' => $discount,
-            'total_harga' => $totalHarga,
+            'nama_product' => $this->request->getPost('nama_product'),
+            'tgl_terjual' => $this->request->getPost('tgl_terjual'),
+            'id_konsumen' => $this->request->getPost('id_konsumen'),
+            'brand' => $this->request->getPost('brand'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'discount' => $this->request->getPost('discount'),
+            'total_harga' => $this->request->getPost('total_harga'),
         ];
 
-        // Simpan data penjualan
-        if ($this->penjualanModel->save_penjualan($data)) {
-            session()->setFlashData('success', 'Data Penjualan Berhasil Ditambahkan');
-        } else {
-            session()->setFlashData('error', 'Gagal menambahkan data penjualan');
-        }
 
+        $this->PenjualanModel->insert_penjualan($data);
+        session()->setFlashdata('success', 'Data Berhasil Ditambahkan');
         return redirect()->to(base_url('penjualan'));
     }
+
+    public function edit($id_penjualan)
+    {
+        $data = [
+            'title' => 'Edit Data penjualan',
+            'penjualan'=> $this->PenjualanModel->edit_penjualan($id_penjualan),
+            'isi' => 'penjualan/v_edit',
+        ];
+        echo view('layout/v_wrapper', $data);
+    }
+
+    public function update($id_penjualan)
+    {
+        $data = [
+            'nama_product' => $this->request->getPost('nama_product'),
+            'tgl_terjual' => $this->request->getPost('tgl_terjual'),
+            'id_konsumen' => $this->request->getPost('id_konsumen'),
+            'brand' => $this->request->getPost('brand'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'discount' => $this->request->getPost('discount'),
+            'total_harga' => $this->request->getPost('total_harga'),
+        ];
+
+
+        $this->PenjualanModel->update_penjualan($data, $id_penjualan);
+        session()->setFlashdata('success', 'Data Berhasil Diupdate');
+        return redirect()->to(base_url('penjualan'));
+    }
+
+    public function delete($id_penjualan)
+    {
+        $oldpenjualan = $this->PenjualanModel->edit_penjualan($id_penjualan);
+        if (!empty($oldpenjualan['gambar']) && file_exists('folder_upload/' . $oldpenjualan['gambar'])) {
+            unlink('folder_upload/' . $oldpenjualan['gambar']);
+        }
+
+        $this->PenjualanModel->delete_penjualan($id_penjualan);
+        session()->setFlashdata('success', 'Data Berhasil Dihapus');
+        return redirect()->to(base_url('penjualan'));
+    }
+
+    public function printpdf()
+    {
+        $data = [
+            'penjualan' => $this->PenjualanModel->get_penjualan(),
+        ];
+
+        $html = view('penjualan/lap_penjualan', $data);
+
+        $options = new \Dompdf\Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        $filename = 'laporan-penjualan-' . date('Ymd-His') . '.pdf';
+        $dompdf->stream($filename, ['Attachment' => false]);
+        exit(0);
+    }
+
 }

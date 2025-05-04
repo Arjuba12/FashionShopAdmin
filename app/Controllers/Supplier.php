@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\SupplierModel;
+use Dompdf\Dompdf;
 
 
 class Supplier extends BaseController
@@ -16,7 +17,7 @@ class Supplier extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'List Data Supplier',
+            'title' => 'Data Supplier',
             'supplier' => $this->SupplierModel->get_supplier(),
             'isi' => 'supplier/v_list',
         ];
@@ -82,6 +83,28 @@ class Supplier extends BaseController
         $this->SupplierModel->delete_supplier($id_supplier);
         session()->setFlashdata('success', 'Data Berhasil Dihapus');
         return redirect()->to(base_url('supplier'));
+    }
+
+    public function printpdf()
+    {
+        $data = [
+            'supplier' => $this->SupplierModel->get_supplier(),
+        ];
+
+        $html = view('supplier/lap_supplier', $data);
+
+        $options = new \Dompdf\Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+
+        $filename = 'laporan-supplier-' . date('Ymd-His') . '.pdf';
+        $dompdf->stream($filename, ['Attachment' => false]);
+        exit(0);
     }
 
 }
