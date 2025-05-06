@@ -60,6 +60,13 @@
                 <i class="nav-icon fas fa-user"></i>
                 <p>Data Konsumen</p>
             </a>
+
+            </li>
+            <li class="nav-item">
+            <a href="<?= base_url('product_home'); ?>" class="nav-link <?= ($title == 'Data Product Porto') ? 'active' : ''; ?>">
+                <i class="nav-icon fas fa-box"></i>
+                <p>Product Porto</p>
+            </a>
             </li>
 
             <li class="nav-item">

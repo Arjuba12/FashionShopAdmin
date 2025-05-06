@@ -101,7 +101,7 @@
                 gap: 20px;
               ">
             <li>
-              <a href="<?= base_url("home") ?>" style="
+              <a href="<?= base_url("front_end_home") ?>" style="
                     color: #000;
                     font-weight: 500;
                     text-decoration: none;

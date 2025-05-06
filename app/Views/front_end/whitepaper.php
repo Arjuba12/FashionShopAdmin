@@ -121,7 +121,7 @@
             >
               <li>
                 <a
-                  href="<?= base_url("home") ?>"
+                  href="<?= base_url("front_end_home") ?>"
                   style="
                     color: #000;
                     font-weight: 500;

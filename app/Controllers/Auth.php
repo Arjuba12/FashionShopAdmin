@@ -62,12 +62,12 @@ class Auth extends BaseController
             } else {
                 // Jika login gagal
                 session()->setFlashdata('pesan', 'Login Gagal !!! Username atau Password Salah !!!');
-                return redirect()->to(base_url('auth/index'));
+                return redirect()->to(base_url('login_page'));
             }
         } else {
             // Jika validasi gagal
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('auth/index'))->withInput();
+            return redirect()->to(base_url('login_page'))->withInput();
         }
     }
 
@@ -80,6 +80,6 @@ class Auth extends BaseController
         session()->remove('role');
 
         session()->setFlashdata('pesan', 'Anda Telah Logout !!!');
-        return redirect()->to(base_url('auth/index'));
+        return redirect()->to(base_url('login_page'));
     }
 }

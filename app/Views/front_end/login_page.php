@@ -128,7 +128,7 @@
     }
 
     .login-container .register-link a {
-      color:rgb(66, 134, 112);
+      color: rgb(66, 134, 112);
       text-decoration: none;
     }
   </style>
@@ -174,7 +174,7 @@
                 gap: 20px;
               ">
             <li>
-              <a href="<?= base_url("home") ?>" style="
+              <a href="<?= base_url("front_end_home") ?>" style="
                     color: #000;
                     font-weight: 500;
                     text-decoration: none;
@@ -271,7 +271,7 @@
     }
 
     input,
-    button[type="submit"] {
+    5 button[type="submit"] {
       padding: 8px;
       font-size: 14px;
     }
@@ -286,6 +286,25 @@
   <div class="login-container">
     <h2 style="text-align: center;">Login to Your Account</h2>
 
+    <?php
+    $errors = session()->getFlashdata('errors');
+    if (!empty($errors)) { ?>
+      <div class="alert alert-danger alert-dismissible">
+        <ul>
+          <?php foreach ($errors as $key => $value) { ?>
+            <li><?= esc($value) ?></li>
+          <?php } ?>
+        </ul>
+      </div>
+    <?php } ?>
+
+    <?php
+    if (session()->getFlashdata('pesan')) {
+      echo '<div class="alert alert-danger alert-dismissible">';
+      echo session()->getFlashdata('pesan');
+      echo '</div>';
+    } ?>
+
     <!-- Pilihan Peran -->
     <div class="role-selector">
       <button type="button" id="adminBtn" onclick="showForm('admin')">Admin</button>
@@ -294,13 +313,14 @@
 
     <!-- Form Admin -->
     <form id="admin-form" action="<?= base_url('auth/login') ?>" method="post">
-      <input type="text" name="username" placeholder="Admin Username" required />      <input type="password" name="password" placeholder="Admin Password" required />
+      <input type="text" name="username" placeholder="Admin Username" required /> <input type="password" name="password"
+        placeholder="Admin Password" required />
       <input type="hidden" name="role" value="admin" />
       <button type="submit">Login as Admin</button>
     </form>
 
     <!-- Form User -->
-    <form id="user-form" action="<?= base_url('auth/login') ?>" method="post">
+    <form id="user-form" action="#">
       <input type="text" name="username" placeholder="User Username" required />
       <input type="password" name="password" placeholder="User Password" required />
       <input type="hidden" name="role" value="user" />
