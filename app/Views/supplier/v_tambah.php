@@ -5,6 +5,11 @@
         <?= csrf_field(); ?>
 
         <div class="form-group">
+            <label for="nama_supplier">Supplier</label>
+            <input type="text" name="nama_supplier" class="form-control" placeholder="Supplier" required>
+        </div>
+
+        <div class="form-group">
             <label for="status">Status</label>
             <select name="status" class="form-control" required>
                 <option value="">-- Pilih Status --</option>
@@ -14,8 +19,8 @@
         </div>
 
         <div class="form-group">
-            <label for="product">Nama Produk</label>
-            <input type="text" name="product" class="form-control" placeholder="Nama Produk" required>
+            <label for="produk">Nama Produk</label>
+            <input type="text" name="produk" class="form-control" placeholder="Produk" required>
         </div>
 
         <div class="form-group">

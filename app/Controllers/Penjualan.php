@@ -36,12 +36,12 @@ class Penjualan extends BaseController
     public function save()
     {
         $data = [
-            'nama_product' => $this->request->getPost('nama_product'),
-            'tgl_terjual' => $this->request->getPost('tgl_terjual'),
-            'id_konsumen' => $this->request->getPost('id_konsumen'),
-            'brand' => $this->request->getPost('brand'),
+            'nama_produk' => $this->request->getPost('nama_produk'),
+            'tanggal_penjual' => $this->request->getPost('tanggal_penjual'),
+            'nama_konsumen' => $this->request->getPost('nama_konsumen'),
             'jumlah' => $this->request->getPost('jumlah'),
-            'discount' => $this->request->getPost('discount'),
+            'harga' => $this->request->getPost('harga'),
+            'diskon' => $this->request->getPost('diskon'),
             'total_harga' => $this->request->getPost('total_harga'),
         ];
 
@@ -55,7 +55,7 @@ class Penjualan extends BaseController
     {
         $data = [
             'title' => 'Edit Data penjualan',
-            'penjualan'=> $this->PenjualanModel->edit_penjualan($id_penjualan),
+            'penjualan' => $this->PenjualanModel->edit_penjualan($id_penjualan),
             'isi' => 'penjualan/v_edit',
         ];
         echo view('layout/v_wrapper', $data);
@@ -64,12 +64,12 @@ class Penjualan extends BaseController
     public function update($id_penjualan)
     {
         $data = [
-            'nama_product' => $this->request->getPost('nama_product'),
-            'tgl_terjual' => $this->request->getPost('tgl_terjual'),
-            'id_konsumen' => $this->request->getPost('id_konsumen'),
-            'brand' => $this->request->getPost('brand'),
+            'nama_produk' => $this->request->getPost('nama_produk'),
+            'tanggal_penjual' => $this->request->getPost('tanggal_penjual'),
+            'nama_konsumen' => $this->request->getPost('nama_konsumen'),
             'jumlah' => $this->request->getPost('jumlah'),
-            'discount' => $this->request->getPost('discount'),
+            'harga' => $this->request->getPost('harga'),
+            'diskon' => $this->request->getPost('diskon'),
             'total_harga' => $this->request->getPost('total_harga'),
         ];
 

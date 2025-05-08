@@ -326,7 +326,7 @@
           <?php foreach ($products as $product): ?>
             <div class="col-md-4 col-sm-4 col-xs-12 mix <?= esc($product['category']) ?>">
               <div class="img home-portfolio-image">
-                <img src="<?= base_url($product['image']) ?>" alt="<?= esc($product['title']) ?>" />
+                <img src="<?= base_url('img/' . $product['image']) ?>" alt="<?= esc($product['title']) ?>" />
                 <div class="overlay-thumb">
                   <a href="javascript:void(0)" class="like-product">
                     <i class="ion-ios-heart-outline"></i>

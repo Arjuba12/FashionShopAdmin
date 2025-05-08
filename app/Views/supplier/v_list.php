@@ -13,6 +13,7 @@
         <thead>
             <tr class="text-center">
                 <th>No</th>
+                <th>Supplier</th>
                 <th>Status</th>
                 <th>Product</th>
                 <th>Jumlah</th>
@@ -24,8 +25,9 @@
             <?php $no = 1; foreach ($supplier as $value) { ?>
                 <tr class="text-center">
                     <td class="align-middle"><?= $no++; ?></td>
+                    <td class="align-middle"><?= $value['nama_supplier']; ?></td>
                     <td class="align-middle"><?= $value['status']; ?></td>
-                    <td class="align-middle"><?= $value['product']; ?></td>
+                    <td class="align-middle"><?= $value['produk']; ?></td>
                     <td class="align-middle"><?= $value['jumlah']; ?></td>
                     <td class="text-left align-middle" style="max-width: 200px; white-space: normal; word-wrap: break-word;">
                         <?= $value['alamat']; ?>

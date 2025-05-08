@@ -16,27 +16,38 @@
                 <th>Nama Product</th>
                 <th>Tanggal Terjual</th>
                 <th>Konsumen</th>
-                <th>Brand</th>
                 <th>Jumlah</th>
-                <th>Discount</th>
+                <th>Harga</th>
+                <th>Diskon</th>
                 <th>Total Harga</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <?php $no = 1; foreach ($penjualan as $value) { ?>
+            <?php $no = 1;
+            foreach ($penjualan as $value) { ?>
                 <tr class="text-center">
                     <td class="align-middle"><?= $no++; ?></td>
-                    <td class="text-left align-middle"><?= $value['nama_product']; ?></td>
-                    <td class="align-middle"><?= $value['tgl_terjual']; ?></td>
-                    <td class="align-middle"><?= $value['id_konsumen']; ?></td>
-                    <td class="align-middle"><?= $value['brand']; ?></td>
+                    <td class="text-left align-middle"><?= $value['nama_produk']; ?></td>
+                    <td class="align-middle"><?= $value['tanggal_penjual']; ?></td>
+                    <td class="align-middle"><?= $value['nama_konsumen']; ?></td>
                     <td class="align-middle"><?= $value['jumlah']; ?></td>
-                    <td class="align-middle"><?= $value['discount']; ?>%</td>
-                    <td class="align-middle">Rp <?= number_format($value['total_harga'], 0, ',', '.'); ?></td>
+                    <td class="align-middle">Rp <?= number_format($value['harga'], 3, ',', '.'); ?></td>
+                    <td class="align-middle"><?= $value['diskon']; ?> %</td>
+
+                    <?php
+                    $subtotal = $value['harga'] * $value['jumlah'];
+                    $diskon = ($subtotal * $value['diskon']) / 100;
+                    $total_harga = $subtotal - $diskon;
+                    ?>
+
+                    <td class="align-middle">Rp <?= number_format($total_harga, 3, ',', '.'); ?></td>
+
                     <td class="align-middle">
-                        <a href="<?= base_url('penjualan/edit/' . $value['id_penjualan']) ?>" class="btn btn-warning">Edit</a>
-                        <a href="<?= base_url('penjualan/delete/' . $value['id_penjualan']) ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus?')">Hapus</a>
+                        <a href="<?= base_url('penjualan/edit/' . $value['id_penjualan']) ?>"
+                            class="btn btn-warning">Edit</a>
+                        <a href="<?= base_url('penjualan/delete/' . $value['id_penjualan']) ?>" class="btn btn-danger"
+                            onclick="return confirm('Apakah yakin ingin menghapus?')">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>

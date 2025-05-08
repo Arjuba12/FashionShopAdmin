@@ -36,8 +36,9 @@ class Supplier extends BaseController
     public function save()
     {
         $data = [
+            'nama_supplier' => $this->request->getPost('nama_supplier'),
             'status' => $this->request->getPost('status'),
-            'product' => $this->request->getPost('product'),
+            'produk' => $this->request->getPost('produk'),
             'jumlah' => $this->request->getPost('jumlah'),
             'alamat' => $this->request->getPost('alamat'),
         ];
@@ -61,8 +62,9 @@ class Supplier extends BaseController
     public function update($id_supplier)
     {
         $data = [
+            'nama_supplier' => $this->request->getPost('nama_supplier'),
             'status' => $this->request->getPost('status'),
-            'product' => $this->request->getPost('product'),
+            'produk' => $this->request->getPost('produk'),
             'jumlah' => $this->request->getPost('jumlah'),
             'alamat' => $this->request->getPost('alamat'),
         ];
