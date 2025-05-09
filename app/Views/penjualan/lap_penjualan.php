@@ -53,12 +53,12 @@
             <?php $no = 1; foreach ($penjualan as $key => $value): ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td style="text-align: left;"><?= esc($value['nama_product']); ?></td>
-                    <td><?= esc(date('d-m-Y', strtotime($value['tgl_terjual']))); ?></td>
-                    <td><?= esc($value['id_konsumen']); ?></td>
-                    <td><?= esc($value['brand']); ?></td>
+                    <td style="text-align: left;"><?= esc($value['nama_produk']); ?></td>
+                    <td><?= esc(date('d-m-Y', strtotime($value['tanggal_penjual']))); ?></td>
+                    <td><?= esc($value['nama_konsumen']); ?></td>
                     <td><?= esc($value['jumlah']); ?></td>
-                    <td><?= esc($value['discount']); ?>%</td>
+                    <td><?= esc($value['harga']); ?></td>
+                    <td><?= esc($value['diskon']); ?>%</td>
                     <td>Rp <?= number_format($value['total_harga'], 0, ',', '.'); ?></td>
                 </tr>
             <?php endforeach; ?>

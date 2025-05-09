@@ -3,7 +3,7 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class konsumenModel extends Model
+class KonsumenModel extends Model
 {
     public function get_konsumen()
     {

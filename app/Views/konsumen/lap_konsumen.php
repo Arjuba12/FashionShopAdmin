@@ -51,9 +51,9 @@
             <?php $no = 1; foreach ($konsumen as $key => $value): ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td style="text-align: left;"><?= esc($value['nama_konsumen']); ?></td>
+                    <td style="text-align: center;"><?= esc($value['nama_konsumen']); ?></td>
                     <td><?= esc($value['umur']); ?> tahun</td>
-                    <td><?= esc($value['no_handphone']); ?></td>
+                    <td><?= esc($value['no_hp']); ?></td>
                     <td><?= esc($value['status']); ?></td>
                     <td style="text-align: left;"><?= esc($value['alamat']); ?></td>
                 </tr>

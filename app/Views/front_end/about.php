@@ -208,7 +208,7 @@
   <div class="container margin-top">
     <div class="row">
       <div class="col-md-12">
-        <div class="our-story wow fadeInUp" style="background: url(img/our-story.jpg) no-repeat"
+        <div class="our-story wow fadeInUp" style="background: url(img/our-story.png) no-repeat"
           data-wow-duration="0.5s" data-wow-delay="0.2s">
           <div class="col-md-6 col-md-offset-6">
             <div class="our-story-content wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
@@ -287,7 +287,7 @@
     </div>
     <div class="col-md-7 col-md-offset-1">
       <div class="our-story-image wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-        <img src="img/services.jpg" alt="Our Story" />
+        <img src="img/services.gif" alt="Our Story" />
       </div>
     </div>
   </div>
@@ -301,7 +301,7 @@
     <div class="owl-carousel team">
       <div>
         <div class="img member">
-          <img src="img/team/member_1.jpg" alt="Team Member" />
+          <img src="img/team/jojo-avatar.png" alt="Team Member" />
           <div class="overlay-thumb">
             <div class="overlay-member-content">
               <div class="overlay-member-content-inner">
@@ -322,12 +322,12 @@
             <span class="btnAfter"></span>
           </div>
         </div>
-        <span class="member-name">JOHN DOE</span>
+        <span class="member-name">ARJUNA BIMANTARA</span>
       </div>
 
       <div>
         <div class="img member">
-          <img src="img/team/member_2.jpg" alt="Team Member" />
+          <img src="img/team/jojo-avatar2.png" alt="Team Member" />
           <div class="overlay-thumb">
             <div class="overlay-member-content">
               <div class="overlay-member-content-inner">
@@ -348,12 +348,12 @@
             <span class="btnAfter"></span>
           </div>
         </div>
-        <span class="member-name">JOHN DOE</span>
+        <span class="member-name">NIZAM KORI</span>
       </div>
 
       <div>
         <div class="img member">
-          <img src="img/team/member_3.jpg" alt="Team Member" />
+          <img src="img/team/jojo-avatar3.png" alt="Team Member" />
           <div class="overlay-thumb">
             <div class="overlay-member-content">
               <div class="overlay-member-content-inner">
@@ -374,133 +374,87 @@
             <span class="btnAfter"></span>
           </div>
         </div>
-        <span class="member-name">JOHN DOE</span>
-      </div>
-
-      <div>
-        <div class="img member">
-          <img src="img/team/member_1.jpg" alt="Team Member" />
-          <div class="overlay-thumb">
-            <div class="overlay-member-content">
-              <div class="overlay-member-content-inner">
-                <span class="position">WEB DEVELOPER</span>
-                <hr />
-                <ul class="member-social-media">
-                  <li>
-                    <a href="http://facebook.com/EliteFingers" target="_blank">Facebook</a>
-                  </li>
-                  <li>
-                    <a href="http://twitter.com/EliteFingers" target="_blank">Twitter</a>
-                  </li>
-                  <li><a href="#" target="_blank">Dribbble</a></li>
-                </ul>
-              </div>
-            </div>
-            <span class="btnBefore"></span>
-            <span class="btnAfter"></span>
-          </div>
-        </div>
-        <span class="member-name">JOHN DOE</span>
+        <span class="member-name">SEPTURO</span>
       </div>
     </div>
-  </div>
 
-  <div class="container margin-top">
-    <div class="clients-wrapper">
-      <ul class="client-thumb">
-        <li>
-          <a href="#"><img src="img/clients/client_1.jpg" alt="Client 1" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="img/clients/client_2.jpg" alt="Client 1" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="img/clients/client_3.jpg" alt="Client 1" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="img/clients/client_4.jpg" alt="Client 1" /></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer margin-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 col-sm-4 col-xs-12">
-          <div class="footer-inner">
-            <div class="footer-content">
-              <h4>ARNIC DISTRO</h4>
-              <address>
-                Prabumulih <br />Pandean no 31 <br />Indonesia
-              </address>
+    <div class="footer margin-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="footer-inner">
+              <div class="footer-content">
+                <h4>ARNIC DISTRO</h4>
+                <address>
+                  Prabumulih <br />Pandean no 31 <br />Indonesia
+                </address>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-2 col-md-push-8 col-sm-4 col-xs-12">
-          <div class="footer-inner">
-            <div class="footer-content">
-              <h4>CONTACT INFO</h4>
-              <p>
-                003 124 115 <br />
-                bongkolstudio@gmail.com <br />
-                www.arnicdistro.com
-              </p>
+          <div class="col-md-2 col-md-push-8 col-sm-4 col-xs-12">
+            <div class="footer-inner">
+              <div class="footer-content">
+                <h4>CONTACT INFO</h4>
+                <p>
+                  003 124 115 <br />
+                  bongkol@gmail.com <br />
+                  www.arnicdistro.com
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-12">
-          <div class="footer-inner">
-            <div class="footer-content">
-              <ul class="social-media">
-                <li>
-                  <a href="#"><i class="iconmoon-facebook"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="iconmoon-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="iconmoon-flickr2"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="iconmoon-dribbble3"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="iconmoon-pinterest"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="iconmoon-linkedin2"></i></a>
-                </li>
-              </ul>
-              <span class="copyright-mark">&copy; 2025 ARNIC, ALL RIGHTS RESERVED</span>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-inner">
+              <div class="footer-content">
+                <ul class="social-media">
+                  <li>
+                    <a href="#"><i class="iconmoon-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="iconmoon-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="iconmoon-flickr2"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="iconmoon-dribbble3"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="iconmoon-pinterest"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="iconmoon-linkedin2"></i></a>
+                  </li>
+                </ul>
+                <span class="copyright-mark">&copy; 2025 ARNIC, ALL RIGHTS RESERVED</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
+    <a href="javascript:void(0)" class="scroll-top" id="scroll-top"><i class="pe-7s-angle-up"></i></a>
 
-  <script src="js/vendor/jquery-1.11.2.min.js"></script>
-  <script data-pace-options='{ "ajax": false }' src="js/vendor/pace.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/vendor/classie.js"></script>
-  <script src="js/vendor/isotope.pkgd.min.js"></script>
-  <script src="js/vendor/jquery.velocity.min.js"></script>
-  <script src="js/vendor/jquery.kenburnsy.min.js"></script>
-  <script src="js/vendor/textslide.js"></script>
-  <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
-  <script src="js/vendor/tabs.js"></script>
-  <script src="js/ef-slider.js"></script>
-  <script src="js/vendor/owl.carousel.min.js"></script>
-  <script src="js/vendor/jquery.magnific-popup.min.js"></script>
-  <script src="js/vendor/jquery.social-buttons.min.js"></script>
-  <script src="js/vendor/wow.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/ajax.js"></script>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script data-pace-options='{ "ajax": false }' src="js/vendor/pace.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/classie.js"></script>
+    <script src="js/vendor/isotope.pkgd.min.js"></script>
+    <script src="js/vendor/jquery.velocity.min.js"></script>
+    <script src="js/vendor/jquery.kenburnsy.min.js"></script>
+    <script src="js/vendor/textslide.js"></script>
+    <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="js/vendor/tabs.js"></script>
+    <script src="js/ef-slider.js"></script>
+    <script src="js/vendor/owl.carousel.min.js"></script>
+    <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="js/vendor/jquery.social-buttons.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ajax.js"></script>
 </body>
 
 </html>

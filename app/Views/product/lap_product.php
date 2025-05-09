@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Laporan Data Produk</title>
@@ -20,7 +21,8 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #000;
             padding: 6px;
             text-align: center;
@@ -37,6 +39,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <h2>Laporan Data Produk</h2>
@@ -56,17 +59,25 @@
             </tr>
         </thead>
         <tbody>
-            <?php $no = 1; foreach ($product as $key => $value): ?>
+            <?php $no = 1;
+            foreach ($product as $key => $value): ?>
                 <tr>
                     <td><?= $no++; ?></td>
                     <td style="text-align: left;"><?= esc($value['name_product']); ?></td>
                     <td>
-                        <?php if (!empty($value['gambar'])): ?>
-                            <img src="<?= base_url('folder_upload/' . esc($value['gambar'])); ?>" alt="Gambar Produk">
-                        <?php else: ?>
-                            Tidak Ada Gambar
-                        <?php endif; ?>
+                        <?php
+                        $pathGambar = FCPATH . 'folder_upload/' . $value['gambar'];
+                        if (file_exists($pathGambar)) {
+                            $type = pathinfo($pathGambar, PATHINFO_EXTENSION);
+                            $data = file_get_contents($pathGambar);
+                            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                            echo '<img src="' . $base64 . '" alt="Gambar Produk">';
+                        } else {
+                            echo 'Tidak Ada Gambar';
+                        }
+                        ?>
                     </td>
+
                     <td style="text-align: left;"><?= esc($value['desc_product']); ?></td>
                     <td><?= esc($value['brand']); ?></td>
                     <td><?= esc($value['stock']); ?></td>
@@ -82,7 +93,8 @@
     <p style="text-align: left;">Prabumulih, <?= date('d-m-Y'); ?></p>
     <p style="text-align: left;">Pimpinan</p>
     <br><br>
-    <p style="text-align: left;">Arjuna Bimantara, S.Kom., M.Kom.</p>
+    <p style="text-align: left;">Arjuna Bimantara</p>
 
 </body>
+
 </html>

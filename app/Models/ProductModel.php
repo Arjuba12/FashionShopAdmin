@@ -5,10 +5,26 @@ use CodeIgniter\Model;
 
 class ProductModel extends Model
 {
+    protected $table = 'tb_product';
+    protected $primaryKey = 'id_product';
+    protected $allowedFields = [
+        'name_product',
+        'desc_product',
+        'brand',
+        'stock',
+        'harga',
+        'discount',
+        'id_kategori',
+        'gambar'
+    ];
+
     public function get_product()
     {
         return $this->db
             ->table('tb_product')
+            ->select('tb_product.*, tb_brand.nama_brand, tb_kategori.nama_kategori')
+            ->join('tb_brand', 'tb_brand.id_brand = tb_product.brand')
+            ->join('tb_kategori', 'tb_kategori.id_kategori = tb_product.id_kategori')
             ->get()
             ->getResultArray();
     }
@@ -24,6 +40,9 @@ class ProductModel extends Model
     {
         return $this->db
             ->table('tb_product')
+            ->select('tb_product.*, tb_brand.nama_brand, tb_kategori.nama_kategori')
+            ->join('tb_brand', 'tb_brand.id_brand = tb_product.brand')
+            ->join('tb_kategori', 'tb_kategori.id_kategori = tb_product.id_kategori')
             ->where('id_product', $id_product)
             ->get()
             ->getRowArray();

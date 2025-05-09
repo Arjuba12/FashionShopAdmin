@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\ProductModel;
+use App\Models\KategoriModel;
+use App\Models\BrandModel;
 use Dompdf\Dompdf;
 
 class Product extends BaseController
@@ -25,12 +27,18 @@ class Product extends BaseController
 
     public function tambah()
     {
+        $kategoriModel = new KategoriModel();
+        $brandModel = new BrandModel();
+
         $data = [
             'title' => 'Tambah Data Produk',
+            'kategori' => $kategoriModel->findAll(),
+            'brand' => $brandModel->findAll(),
             'isi' => 'product/v_tambah',
         ];
         echo view('layout/v_wrapper', $data);
     }
+
 
     public function save()
     {
@@ -59,13 +67,19 @@ class Product extends BaseController
 
     public function edit($id_product)
     {
+        $kategoriModel = new KategoriModel();
+        $brandModel = new BrandModel();
+
         $data = [
             'title' => 'Edit Data Produk',
-            'product'=> $this->ProductModel->edit_product($id_product),
+            'product' => $this->ProductModel->edit_product($id_product),
+            'kategori' => $kategoriModel->findAll(),
+            'brand' => $brandModel->findAll(),
             'isi' => 'product/v_edit',
         ];
         echo view('layout/v_wrapper', $data);
     }
+
 
     public function update($id_product)
     {
@@ -110,6 +124,8 @@ class Product extends BaseController
 
     public function printpdf()
     {
+        ini_set('max_execution_time', 300); // Tambahkan ini untuk menghindari timeout
+
         $data = [
             'product' => $this->ProductModel->get_product(),
         ];

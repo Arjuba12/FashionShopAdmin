@@ -15,8 +15,8 @@
         </div>
 
         <div class="form-group">
-            <label for="no_handphone">No Handphone</label>
-            <input type="text" name="no_handphone" class="form-control" value="<?= $konsumen['no_handphone']; ?>" required>
+            <label for="no_hp">No Handphone</label>
+            <input type="number" name="no_hp" class="form-control" value="<?= $konsumen['no_hp']; ?>" required>
         </div>
 
         <div class="form-group">

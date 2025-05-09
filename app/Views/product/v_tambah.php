@@ -16,7 +16,12 @@
 
         <div class="form-group">
             <label for="brand">Brand</label>
-            <input type="text" name="brand" class="form-control" placeholder="Brand" required>
+            <select name="brand" class="form-control" required>
+                <option value="">-- Pilih Brand --</option>
+                <?php foreach ($brand as $b): ?>
+                    <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div class="form-group">
@@ -36,7 +41,12 @@
 
         <div class="form-group">
             <label for="id_kategori">Kategori</label>
-            <input type="text" name="id_kategori" class="form-control" placeholder="ID Kategori" required>
+            <select name="id_kategori" class="form-control" required>
+                <option value="">-- Pilih Kategori --</option>
+                <?php foreach ($kategori as $k): ?>
+                    <option value="<?= $k['id_kategori']; ?>"><?= $k['nama_kategori']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div class="form-group">

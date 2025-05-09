@@ -79,6 +79,20 @@ class Penjualan extends BaseController
         return redirect()->to(base_url('penjualan'));
     }
 
+    public function grafik_penjualan()
+    {
+        // Mengambil data penjualan per bulan
+        $dataPenjualan = $this->PenjualanModel->get_penjualan_by_month();
+
+        $data = [
+            'title' => 'Grafik Penjualan',
+            'penjualan' => $dataPenjualan,
+            'isi' => 'penjualan/v_grafikPenjualan',
+        ];
+
+        echo view('layout/v_wrapper', $data);
+    }
+
     public function delete($id_penjualan)
     {
         $oldpenjualan = $this->PenjualanModel->edit_penjualan($id_penjualan);

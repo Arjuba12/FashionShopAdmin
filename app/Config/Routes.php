@@ -83,6 +83,10 @@ $routes->post('/product_home/update/(:num)', 'ProductHome::update/$1');
 $routes->get('/product_home/delete/(:num)', 'ProductHome::delete/$1');
 
 
+$routes->get('grafik_penjualan', 'GrafikPenjualan::index');
+
+
+
 
 
 

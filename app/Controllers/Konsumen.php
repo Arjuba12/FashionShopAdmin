@@ -38,7 +38,7 @@ class Konsumen extends BaseController
         $data = [
             'nama_konsumen' => $this->request->getPost('nama_konsumen'),
             'umur' => $this->request->getPost('umur'),
-            'no_handphone' => $this->request->getPost('no_handphone'),
+            'no_hp' => $this->request->getPost('no_hp'),
             'status' => $this->request->getPost('status'),
             'alamat' => $this->request->getPost('alamat'),
         ];
@@ -64,7 +64,7 @@ class Konsumen extends BaseController
         $data = [
            'nama_konsumen' => $this->request->getPost('nama_konsumen'),
             'umur' => $this->request->getPost('umur'),
-            'no_handphone' => $this->request->getPost('no_handphone'),
+            'no_hp' => $this->request->getPost('no_hp'),
             'status' => $this->request->getPost('status'),
             'alamat' => $this->request->getPost('alamat'),
         ];

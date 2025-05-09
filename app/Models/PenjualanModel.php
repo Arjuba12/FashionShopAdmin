@@ -13,6 +13,17 @@ class PenjualanModel extends Model
             ->getResultArray();
     }
 
+    public function get_penjualan_by_month()
+    {
+        // Mengambil data penjualan per bulan
+        return $this->db->table('tb_penjualan')
+            ->select('MONTH(tanggal_penjual) as bulan, SUM(jumlah) as total_penjualan')
+            ->groupBy('bulan')
+            ->orderBy('bulan', 'ASC')
+            ->get()
+            ->getResultArray();
+    }
+
     public function insert_penjualan($data)
     {
         return $this->db

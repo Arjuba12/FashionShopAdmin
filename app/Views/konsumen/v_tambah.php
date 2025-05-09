@@ -15,8 +15,8 @@
         </div>
 
         <div class="form-group">
-            <label for="no_handphone">No Handphone</label>
-            <input type="text" name="no_handphone" class="form-control" required>
+            <label for="no_hp">No Handphone</label>
+            <input type="number" name="no_hp" class="form-control" required>
         </div>
 
         <div class="form-group">

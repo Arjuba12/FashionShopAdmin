@@ -27,7 +27,7 @@
                     <td class="align-middle"><?= $no++; ?></td>
                     <td class="text-left align-middle"><?= $value['nama_konsumen']; ?></td>
                     <td class="align-middle"><?= $value['umur']; ?></td>
-                    <td class="align-middle"><?= $value['no_handphone']; ?></td>
+                    <td class="align-middle"><?= $value['no_hp']; ?></td>
                     <td class="align-middle"><?= $value['status']; ?></td>
                     <td class="text-left align-middle" style="max-width: 200px; white-space: normal; word-wrap: break-word;">
                         <?= $value['alamat']; ?>

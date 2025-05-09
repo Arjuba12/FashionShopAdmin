@@ -38,8 +38,9 @@
 
     <table>
         <thead>
-            <tr>
+        <tr class="text-center">
                 <th>No</th>
+                <th>Supplier</th>
                 <th>Status</th>
                 <th>Product</th>
                 <th>Jumlah</th>
@@ -50,8 +51,9 @@
             <?php $no = 1; foreach ($supplier as $key => $value): ?>
                 <tr>
                     <td><?= $no++; ?></td>
+                    <td><?= esc($value['nama_supplier']); ?></td>
                     <td><?= esc($value['status']); ?></td>
-                    <td><?= esc($value['product']); ?></td>
+                    <td><?= esc($value['produk']); ?></td>
                     <td><?= esc($value['jumlah']); ?></td>
                     <td style="text-align: left;"><?= esc($value['alamat']); ?></td>
                 </tr>
